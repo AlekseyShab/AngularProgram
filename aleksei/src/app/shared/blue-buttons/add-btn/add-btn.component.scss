@@ -8,6 +8,9 @@
   border:0;
   border-radius: 3px;
   background-color:$dark-sky-blue;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .text{
