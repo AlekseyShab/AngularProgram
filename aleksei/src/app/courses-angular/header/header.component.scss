@@ -1,0 +1,28 @@
+@import '../../color-variables';
+
+.header{
+  background-color: $grey;
+  padding: 16px 0 16px 85px;
+  position: relative;
+  height: 64px;
+  width: 100%;
+}
+
+.btn{
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+  padding: 0 22.5px;
+}
+
+.auth-section{
+  position: absolute;
+  right: 18px;
+  top: 27px;
+}
+
+.btn-text{
+  padding-left: 9px;
+  color: white;
+  font-size: 14px;
+}

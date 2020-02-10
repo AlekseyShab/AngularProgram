@@ -9,10 +9,15 @@ html {
 
 
 body {
-  font-size: 1.8rem;
+  font-family: SourceSansPro, sans-serif;
+  font-size: 1.4rem;
   margin: 0;
 }
 
 a{
+  outline: none;
+}
+
+*:focus{
   outline: none;
 }

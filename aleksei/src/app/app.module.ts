@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SectionListComponent } from './components/section-list/section-list.component';
-import { SectionListItemComponent } from './components/section-list-item/section-list-item.component';
+import { HeaderComponent } from './courses-angular/header/header.component';
+import { FooterComponent } from './courses-angular/footer/footer.component';
+import { SectionListComponent } from './courses-angular/section-list/section-list.component';
+import { SectionListItemComponent } from './courses-angular/section-list-item/section-list-item.component';
 
 @NgModule({
   declarations: [
