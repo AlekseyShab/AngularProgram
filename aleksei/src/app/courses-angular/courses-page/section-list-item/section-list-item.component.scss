@@ -1,0 +1,48 @@
+@import '../../../color-variables';
+
+.section-item{
+  border-radius: 8px;
+  background-color: $white;
+  padding: 24px;
+  margin: 12px 0;
+}
+
+.main-text-container{
+  display: flex;
+  padding-top: 8px;
+}
+
+.title-container{
+  display: flex;
+  align-items: center;
+  &__text{
+    font-size: 24px;
+  }
+}
+
+.date-time-container{
+  display: flex;
+  padding-left: 370px;
+}
+
+.btn-container{
+  display: flex;
+}
+
+.text-container{
+  padding-right: 88px;
+  color:$grey;
+  line-height: 1.71;
+}
+
+.icon{
+  padding: 0 8px;
+  color:#b9bdce;
+}
+
+.icon i{
+  cursor: pointer;
+  margin-right:2px;
+  width: 14px;
+  height: 16px;
+}

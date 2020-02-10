@@ -1,7 +1,7 @@
 @import '../../color-variables';
 
 .header{
-  background-color: $grey;
+  background-color: $dark-grey;
   padding: 16px 0 16px 85px;
   position: relative;
   height: 64px;
@@ -25,4 +25,8 @@
   padding-left: 9px;
   color: white;
   font-size: 14px;
+}
+
+.video-btn{
+  padding: 0;
 }

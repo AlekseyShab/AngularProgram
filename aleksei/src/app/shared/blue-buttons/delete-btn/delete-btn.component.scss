@@ -1,0 +1,27 @@
+@import '../../../color-variables';
+
+.delete-btn{
+  align-items: center;
+  border:0;
+  border-radius: 3px;
+  background-color:$dark-sky-blue;
+  color: $white;
+  cursor: pointer;
+  display: flex;
+  padding: 1px 18px 1px 12px;
+  margin: 0 6px;
+}
+
+.text{
+  font-size: 12px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+  line-height: 2.57;
+  letter-spacing: -0.1px;
+  padding-left: 12px;
+}
+
+.fa {
+  font-size: 15px;
+  cursor: pointer;
+}

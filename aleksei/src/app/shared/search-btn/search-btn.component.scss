@@ -1,0 +1,15 @@
+@import '../../color-variables';
+
+.search-btn{
+  background-color: $search-green;
+  border:0;
+  border-radius: 3px;
+  color:$white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 24px;
+  margin: 0 6px;
+  &:hover{
+    background-color: $dark-search-green;
+  }
+}
