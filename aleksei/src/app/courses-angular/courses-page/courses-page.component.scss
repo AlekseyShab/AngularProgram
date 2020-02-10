@@ -1,0 +1,35 @@
+@import '../../color-variables';
+
+.courses-page{
+  background-color: $light-grey;
+  padding: 24px 85px 143px 85px;
+}
+.search-section{
+  display: flex;
+  align-items: center;
+}
+.search-field{
+  border-radius: 3px;
+  border:1px solid $light-grey;
+  height: 48px;
+  width: 360px;
+  padding: 12px 0 12px 42px;
+  font-size: 14px;
+}
+
+.input-container{
+  position: relative;
+}
+
+.loupe-img{
+  position: absolute;
+  top: 13px;
+  left: 12px;
+}
+
+.add-courses-section{
+  display: flex;
+  justify-content: flex-end;
+  padding:24px 0 12px 0;
+}
+

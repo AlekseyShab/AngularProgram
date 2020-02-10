@@ -1,0 +1,25 @@
+@import '../../../color-variables';
+
+.load-more-section{
+  background-color: $white;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+}
+
+.load-more-btn{
+  color: $soft-blue;
+  border:0;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 12px;
+  text-transform: uppercase;
+  text-decoration: underline $soft-blue;
+  &:hover{
+    color: $dark-sky-blue;
+    text-decoration: underline $dark-sky-blue;
+
+  }
+}
