@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-section-list',
-  templateUrl: './section-list.component.html',
-  styleUrls: ['./section-list.component.scss']
+  selector: 'app-list',
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
-export class SectionListComponent implements OnInit {
+export class ListComponent implements OnInit {
   items:object[];
   constructor() { }
 
