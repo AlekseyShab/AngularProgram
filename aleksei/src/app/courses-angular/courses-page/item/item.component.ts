@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
 
 @Component({
@@ -8,6 +8,7 @@ import { CourseItem } from '../models/typescript-course.model';
 })
 export class ItemComponent implements OnInit {
   @Input() info: CourseItem;
+  @Output() showId = new EventEmitter();
   courseId: string;
 
   constructor() { }
@@ -16,8 +17,8 @@ export class ItemComponent implements OnInit {
     this.courseId = this.info.id
   }
 
-  showItemId():void {
-    console.log(`Show item - ${this.info.id}`)
+  showItemId(id):void {
+    this.showId.emit(id)
   }
 
 }

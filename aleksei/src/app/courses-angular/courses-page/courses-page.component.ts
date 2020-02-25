@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-courses-page',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses-page.component.scss']
 })
 export class CoursesPageComponent implements OnInit {
+  @Output() showId = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  show(id) {
+    this.showId.emit(console.log(id))
+  }
 }

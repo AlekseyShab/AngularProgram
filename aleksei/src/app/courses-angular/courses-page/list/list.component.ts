@@ -8,6 +8,7 @@ import { CoursePageService } from '../services/course-page.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
+
   array: CourseItem[];
 
   constructor(private courseService: CoursePageService) {
@@ -15,5 +16,9 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.array = this.courseService.array
+  }
+
+  onChanged(e) {
+    console.log(e);
   }
 }

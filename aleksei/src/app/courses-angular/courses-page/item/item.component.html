@@ -1,4 +1,4 @@
-<div class="item">
+<div class="item" (show)="info.id">
 
   <div class="title-container">
     <span class="title-container__text">Video Course {{info.id}}. {{info.title}}</span>
@@ -15,8 +15,8 @@
       </span>
     </div>
     <div class="btn-container">
-      <app-edit-btn (click)="showItemId()"></app-edit-btn>
-      <app-delete-btn></app-delete-btn>
+      <app-edit-btn></app-edit-btn>
+      <app-delete-btn (click)="showItemId(info.id)"></app-delete-btn>
     </div>
   </div>
 </div>
