@@ -5,3 +5,11 @@ export interface TypeScriptCourse {
   duration: string;
   description: string;
 }
+
+export interface CourseItem {
+  id:string,
+  title: string;
+  description: string;
+  creationTime: string,
+  creationDate: string;
+}

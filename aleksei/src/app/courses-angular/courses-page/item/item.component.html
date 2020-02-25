@@ -1,25 +1,21 @@
 <div class="item">
 
   <div class="title-container">
-    <span class="title-container__text">Video Course 1. Name tag</span>
+    <span class="title-container__text">Video Course {{info.id}}. {{info.title}}</span>
     <div class="date-time-container">
-      <div class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i>1h 28 min</div>
-      <div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i>9 Nov, 2018</div>
+      <div class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i>{{info.creationTime}}</div>
+      <div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i>{{info.creationDate}}</div>
     </div>
   </div>
 
   <div class="main-text-container">
     <div class="text-container">
       <span>
-        Learn about where you can find course descriptions, what information they include, how they work,
-        and details about various components of a course description.
-        Course descriptions report information about a university or college's classes.
-        They're published both in course catalogs that outline degree requirements
-        and in course schedules that contain descriptions for all courses offered during a particular semester.
+        {{info.description}}
       </span>
     </div>
     <div class="btn-container">
-      <app-edit-btn></app-edit-btn>
+      <app-edit-btn (click)="showItemId()"></app-edit-btn>
       <app-delete-btn></app-delete-btn>
     </div>
   </div>

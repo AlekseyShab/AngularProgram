@@ -8,6 +8,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { LoadMoreComponent } from './load-more/load-more.component';
 import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -27,6 +28,8 @@ import { SectionComponent } from './section/section.component';
   imports: [
     SharedModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ]
 })
 export class CoursesPageModule { }
