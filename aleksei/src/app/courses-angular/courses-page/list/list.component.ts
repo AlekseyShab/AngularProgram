@@ -19,6 +19,7 @@ export class ListComponent implements OnInit {
   }
 
   onChanged(e) {
+    this.array = this.array.filter(itemId => itemId.id !== e);
     console.log(e);
   }
 }
