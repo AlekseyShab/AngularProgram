@@ -48,11 +48,4 @@ export class CoursePageService {
     return this.arrayOfCourses;
   }
 
-  // arrayRemove(value) {
-  //   this.arrayOfCourses = this.arrayOfCourses.filter(function(item){
-  //     return item.id !== value;
-  //   });
-  //   console.log(this.arrayOfCourses)
-  // }
-
 }
