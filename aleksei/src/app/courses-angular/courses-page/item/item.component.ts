@@ -8,8 +8,8 @@ import { CourseItem } from '../models/typescript-course.model';
 })
 export class ItemComponent implements OnInit {
   @Input() info: CourseItem;
-  @Output() showId = new EventEmitter();
-  courseId: string;
+  @Output() deleteElement: EventEmitter<number> = new EventEmitter();
+  courseId: number;
 
   constructor() { }
 
@@ -17,8 +17,8 @@ export class ItemComponent implements OnInit {
     this.courseId = this.info.id
   }
 
-  showItemId(id):void {
-    this.showId.emit(id)
+  deleteItem(id):void {
+    this.deleteElement.emit(id)
   }
 
 }

@@ -18,7 +18,7 @@ export class ListComponent implements OnInit {
     this.array = this.courseService.array
   }
 
-  onChanged(e) {
+  deleteItemElement(e) {
     this.array = this.array.filter(itemId => itemId.id !== e);
     console.log(e);
   }
