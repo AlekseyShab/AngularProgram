@@ -11,7 +11,7 @@ export class CoursePageService {
 
   arrayOfCourses:CourseItem[] = [
     {
-      id: '1',
+      id: 1,
       title: 'Angular',
       description: 'Learn about ' +
         'where you can find course descriptions, what information they include, ' +
@@ -21,7 +21,7 @@ export class CoursePageService {
       creationDate:'9 Nov, 2018'
     },
     {
-      id: '2',
+      id: 2,
       title: 'React',
       description: 'Learn about ' +
         'where you can find course descriptions, what information they include, ' +
@@ -31,7 +31,7 @@ export class CoursePageService {
       creationDate:'8 Nov, 2018'
     },
     {
-      id: '3',
+      id: 3,
       title: 'Vue',
       description: 'Learn about ' +
         'where you can find course descriptions, what information they include, ' +

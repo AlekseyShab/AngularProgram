@@ -7,7 +7,7 @@ export interface TypeScriptCourse {
 }
 
 export interface CourseItem {
-  id:string,
+  id:number,
   title: string;
   description: string;
   creationTime: string,
