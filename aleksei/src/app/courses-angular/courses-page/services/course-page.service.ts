@@ -7,9 +7,10 @@ import { CourseItem } from '../models/typescript-course.model';
 })
 export class CoursePageService {
 
-  constructor() { }
+  constructor() {
+  }
 
-  arrayOfCourses:CourseItem[] = [
+  arrayOfCourses: CourseItem[] = [
     {
       id: 1,
       title: 'Angular',
@@ -17,8 +18,8 @@ export class CoursePageService {
         'where you can find course descriptions, what information they include, ' +
         'how they work, and details about various components of a course description. ' +
         'Course descriptions report information about a university or college\'s classes.',
-      creationTime:'1h 28min',
-      creationDate:'9 Nov, 2018'
+      creationTime: '1h 28min',
+      creationDate: '9 Nov, 2018'
     },
     {
       id: 2,
@@ -27,8 +28,8 @@ export class CoursePageService {
         'where you can find course descriptions, what information they include, ' +
         'how they work, and details about various components of a course description. ' +
         'Course descriptions report information about a university or college\'s classes.',
-      creationTime:'1h 28min',
-      creationDate:'8 Nov, 2018'
+      creationTime: '1h 28min',
+      creationDate: '8 Nov, 2018'
     },
     {
       id: 3,
@@ -37,13 +38,13 @@ export class CoursePageService {
         'where you can find course descriptions, what information they include, ' +
         'how they work, and details about various components of a course description. ' +
         'Course descriptions report information about a university or college\'s classes.',
-      creationTime:'2h 38min',
-      creationDate:'19 Nov, 2018'
+      creationTime: '2h 38min',
+      creationDate: '19 Nov, 2018'
     }
   ];
 
 
-  get array():CourseItem[] {
+  get array(): CourseItem[] {
     return this.arrayOfCourses;
   }
 
