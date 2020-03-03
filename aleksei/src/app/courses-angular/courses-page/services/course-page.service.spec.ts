@@ -9,4 +9,11 @@ describe('CoursePageServicesService', () => {
     const service: CoursePageService = TestBed.get(CoursePageService);
     expect(service).toBeTruthy();
   });
+
+  it('should get array', () => {
+    const service: CoursePageService = TestBed.get(CoursePageService);
+    const spy = spyOnProperty(service, 'array', 'get').and.callThrough();
+    service.array;
+    expect(spy).toHaveBeenCalled();
+  });
 });

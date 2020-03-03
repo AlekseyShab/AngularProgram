@@ -2,11 +2,13 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesPageComponent } from './courses-page.component';
 import {
+  AddBtnStubComponent,
   BreadcrumbsStubComponent,
   EditBtnStubComponent,
   FooterStubComponent,
   HeaderStubComponent,
-  SearchBtnStubComponent
+  SearchBtnStubComponent,
+  SectionStubComponent
 } from '../testing/component-stub';
 
 describe('CoursesPageComponent', () => {
@@ -21,7 +23,9 @@ describe('CoursesPageComponent', () => {
         BreadcrumbsStubComponent,
         SearchBtnStubComponent,
         FooterStubComponent,
-        EditBtnStubComponent
+        EditBtnStubComponent,
+        AddBtnStubComponent,
+        SectionStubComponent
       ]
     })
     .compileComponents();

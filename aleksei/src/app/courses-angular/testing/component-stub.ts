@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CourseItem } from '../courses-page/models/typescript-course.model';
 
 @Component({
   selector: 'app-header',
@@ -35,5 +36,54 @@ export class FooterStubComponent {
   template: '',
 })
 export class EditBtnStubComponent {
+
+}
+
+@Component({
+  selector: 'app-item',
+  template: '',
+})
+export class ItemStubComponent {
+  @Input() info: CourseItem;
+  @Output() deleteElement: EventEmitter<number> = new EventEmitter();
+}
+
+@Component({
+  selector: 'app-delete-btn',
+  template: ''
+})
+export class DeleteBtnStubComponent {
+
+}
+
+@Component({
+  selector: 'app-add-btn',
+  template: '',
+})
+export class AddBtnStubComponent {
+
+}
+
+@Component({
+  selector: 'app-list',
+  template: '',
+})
+export class ListStubComponent {
+
+}
+
+@Component({
+  selector: 'app-section',
+  template: '',
+})
+export class SectionStubComponent {
+
+}
+
+@Component({
+  selector: 'app-load-more',
+  template: '',
+})
+export class LoadMoreStubComponent {
 
 }
