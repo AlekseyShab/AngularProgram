@@ -9,17 +9,17 @@ import { CoursePageService } from '../services/course-page.service';
 })
 export class ListComponent implements OnInit {
 
-  array: CourseItem[];
+  arrayOfCourses: CourseItem[];
 
   constructor(private courseService: CoursePageService) {
   }
 
   ngOnInit() {
-    this.array = this.courseService.array
+    this.arrayOfCourses = this.courseService.array
   }
 
   deleteItemElement(e) {
-    this.array = this.array.filter(itemId => itemId.id !== e);
+    this.arrayOfCourses = this.arrayOfCourses.filter(itemId => itemId.id !== e);
     console.log(e);
   }
 }

@@ -77,6 +77,6 @@ describe('ListComponent', () => {
 
   it('should DELETE Item from array', () => {
     component.deleteItemElement(1);
-    expect(component.array.length).toBe(2);
+    expect(component.arrayOfCourses.length).toBe(2);
   });
 });
