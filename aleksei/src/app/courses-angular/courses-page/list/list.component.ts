@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.arrayOfCourses = this.courseService.array
+    this.arrayOfCourses = this.courseService.courses
   }
 
   deleteItemElement(e) {

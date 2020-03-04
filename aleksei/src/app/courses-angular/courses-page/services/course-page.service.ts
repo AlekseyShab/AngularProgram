@@ -44,7 +44,7 @@ export class CoursePageService {
   ];
 
 
-  get array(): CourseItem[] {
+  get courses(): CourseItem[] {
     return this.arrayOfCourses;
   }
 

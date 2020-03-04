@@ -36,7 +36,7 @@ class CoursePageStubService {
   ];
 
 
-  get array(): CourseItem[] {
+  get courses(): CourseItem[] {
     return this.arrayOfCourses;
   }
 
