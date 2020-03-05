@@ -14,11 +14,11 @@ export class ItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.courseId = this.info.id
+    this.courseId = this.info.id;
   }
 
-  deleteItem(id):void {
-    this.deleteElement.emit(id)
+  deleteItem(id): void {
+    this.deleteElement.emit(id);
   }
 
 }

@@ -54,7 +54,7 @@ describe('ListComponent', () => {
         LoadMoreStubComponent
       ],
       providers: [
-        {provide:CoursePageService, useClass:CoursePageStubService}
+        {provide: CoursePageService, useClass: CoursePageStubService}
       ]
     })
     .compileComponents();

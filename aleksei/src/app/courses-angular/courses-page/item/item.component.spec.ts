@@ -6,16 +6,14 @@ import { Component } from '@angular/core';
 
 const SELECTORS = {
   deleteBtn: 'app-delete-btn'
-}
+};
 @Component({
-  template: `
-    <app-item [info]='info' (deleteElement)="$event"></app-item>
-  `
+  template: `<app-item [info]='info' (deleteElement)="$event"></app-item>`
 })
 class TestHostComponent {
   info = {
     id: 4
-  }
+  };
 }
 
 
@@ -69,16 +67,16 @@ describe('ItemComponent ', () => {
 
   it('should create and delete Item calling @Output', () => {
     component.info = {
-      id:3,
-      title:'Angular',
-      description:'',
-      creationTime:'1h 20min',
-      creationDate:'12 Nov 2011'
+      id: 3,
+      title: 'Angular',
+      description: '',
+      creationTime: '1h 20min',
+      creationDate: '12 Nov 2011'
     };
     fixture.detectChanges();
     removeSpy = spyOn(component.deleteElement, 'emit');
     const el = fixture.nativeElement.querySelector(SELECTORS.deleteBtn);
     el.click();
-    expect(removeSpy).toHaveBeenCalled()
+    expect(removeSpy).toHaveBeenCalled();
   });
 });
