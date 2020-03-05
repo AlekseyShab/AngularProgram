@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CourseItem } from '../models/typescript-course.model';
 
 @Component({
   selector: 'app-item',
@@ -6,11 +7,18 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  @Input() item:string;
+  @Input() info: CourseItem;
+  @Output() deleteElement: EventEmitter<number> = new EventEmitter();
+  courseId: number;
 
   constructor() { }
 
   ngOnInit() {
+    this.courseId = this.info.id;
+  }
+
+  deleteItem(id): void {
+    this.deleteElement.emit(id);
   }
 
 }

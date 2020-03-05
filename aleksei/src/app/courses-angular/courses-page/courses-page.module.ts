@@ -10,7 +10,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
 
 
-
 @NgModule({
   declarations: [
     CoursesPageComponent,

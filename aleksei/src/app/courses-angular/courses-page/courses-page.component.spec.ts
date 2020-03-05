@@ -1,6 +1,15 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CoursesPageComponent } from './courses-page.component';
+import {
+  AddBtnStubComponent,
+  BreadcrumbsStubComponent,
+  EditBtnStubComponent,
+  FooterStubComponent,
+  HeaderStubComponent,
+  SearchBtnStubComponent,
+  SectionStubComponent
+} from '../testing/component-stub';
 
 describe('CoursesPageComponent', () => {
   let component: CoursesPageComponent;
@@ -8,7 +17,16 @@ describe('CoursesPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CoursesPageComponent ]
+      declarations: [
+        CoursesPageComponent,
+        HeaderStubComponent,
+        BreadcrumbsStubComponent,
+        SearchBtnStubComponent,
+        FooterStubComponent,
+        EditBtnStubComponent,
+        AddBtnStubComponent,
+        SectionStubComponent
+      ]
     })
     .compileComponents();
   }));

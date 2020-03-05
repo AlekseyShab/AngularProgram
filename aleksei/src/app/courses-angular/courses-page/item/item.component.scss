@@ -15,6 +15,7 @@
 .title-container{
   display: flex;
   align-items: center;
+  position: relative;
   &__text{
     font-size: 24px;
   }
@@ -22,7 +23,8 @@
 
 .date-time-container{
   display: flex;
-  padding-left: 370px;
+  position: absolute;
+  right: 430px;
 }
 
 .btn-container{

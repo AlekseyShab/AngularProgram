@@ -1,7 +1,7 @@
-export interface TypeScriptCourse {
-  id: string;
+export interface CourseItem {
+  id: number;
   title: string;
-  creationDate: Date;
-  duration: string;
   description: string;
+  creationTime: string;
+  creationDate: string;
 }

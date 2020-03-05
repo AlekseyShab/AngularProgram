@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CourseItem } from '../models/typescript-course.model';
+import { CoursePageService } from '../services/course-page.service';
 
 @Component({
   selector: 'app-list',
@@ -6,15 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-  items:object[];
-  constructor() { }
 
-  ngOnInit() {
-    this.items = [
-      {name:'Alex'},
-      {name:'Elena'},
-      {name:'Vasiy'},
-    ]
+  arrayOfCourses: CourseItem[];
+
+  constructor(private courseService: CoursePageService) {
   }
 
+  ngOnInit() {
+    this.arrayOfCourses = this.courseService.courses;
+  }
+
+  deleteItemElement(e) {
+    this.arrayOfCourses = this.arrayOfCourses.filter(itemId => itemId.id !== e);
+    console.log(e);
+  }
 }
