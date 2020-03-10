@@ -9,6 +9,7 @@ import { LoadMoreComponent } from './load-more/load-more.component';
 import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
 import { HighlightBorderDirective } from './directives/highlightborder.directive';
+import { DurationPipe } from './pipes/duration.pipe';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { HighlightBorderDirective } from './directives/highlightborder.directive
     BreadcrumbsComponent,
     LoadMoreComponent,
     HighlightBorderDirective,
+    DurationPipe,
   ],
   exports: [
     CoursesPageComponent,

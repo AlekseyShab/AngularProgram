@@ -1,8 +1,10 @@
-import { HighlightborderDirective } from './highlightborder.directive';
+import { HighlightBorderDirective } from './highlightborder.directive';
+import { ElementRef } from '@angular/core';
 
-describe('HighlightborderDirective', () => {
+describe('HighlightBorderDirective', () => {
   it('should create an instance', () => {
-    const directive = new HighlightborderDirective();
+    let elRef: ElementRef;
+    const directive = new HighlightBorderDirective(elRef);
     expect(directive).toBeTruthy();
   });
 });

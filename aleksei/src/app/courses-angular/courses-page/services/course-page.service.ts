@@ -18,7 +18,7 @@ export class CoursePageService {
         'where you can find course descriptions, what information they include, ' +
         'how they work, and details about various components of a course description. ' +
         'Course descriptions report information about a university or college\'s classes.',
-      creationTime: '1h 28min',
+      durationTime: 60,
       creationDate: new Date("2020-10-03"),
       topRated: true,
       color:'red'
@@ -30,7 +30,7 @@ export class CoursePageService {
         'where you can find course descriptions, what information they include, ' +
         'how they work, and details about various components of a course description. ' +
         'Course descriptions report information about a university or college\'s classes.',
-      creationTime: '1h 28min',
+      durationTime: 88,
       creationDate: new Date("2016-06-03"),
       topRated: true,
       color:'blue'
@@ -42,7 +42,7 @@ export class CoursePageService {
         'where you can find course descriptions, what information they include, ' +
         'how they work, and details about various components of a course description. ' +
         'Course descriptions report information about a university or college\'s classes.',
-      creationTime: '2h 38min',
+      durationTime: 30,
       creationDate: new Date("2020-03-03"),
       topRated: false,
       color:'green'

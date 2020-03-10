@@ -16,22 +16,28 @@ class CoursePageStubService {
       id: 1,
       title: 'Angular',
       description: 'something',
-      creationTime: '1h 28min',
-      creationDate: '9 Nov, 2018'
+      durationTime: '1h 28min',
+      creationDate: new Date('2016-06-03'),
+      topRated: true,
+      color: 'red'
     },
     {
       id: 2,
       title: 'React',
       description: 'something',
-      creationTime: '1h 28min',
-      creationDate: '8 Nov, 2018'
+      durationTime: '1h 28min',
+      creationDate: new Date('2016-06-03'),
+      topRated: true,
+      color: 'blue'
     },
     {
       id: 3,
       title: 'Vue',
       description: 'something',
-      creationTime: '2h 38min',
-      creationDate: '19 Nov, 2018'
+      durationTime: '2h 38min',
+      creationDate: new Date('2016-06-03'),
+      topRated: false,
+      color: 'green'
     }
   ];
 

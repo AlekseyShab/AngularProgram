@@ -12,6 +12,7 @@ export class HighlightBorderDirective implements OnInit{
 
   ngOnInit(){
       if(this.creationDate < this.currentDate && this.creationDate >= this.createDate()){
+        console.log(this.element);
         this.element.nativeElement.style.border = '2px solid green'
       }
       if(this.creationDate > this.currentDate){
