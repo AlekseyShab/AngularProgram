@@ -35,10 +35,9 @@ describe('ItemComponent ', () => {
       id: 3,
       title: 'Angular',
       description: '',
-      durationTime: '1h 20min',
+      durationTime: 30,
       creationDate: new Date("2016-06-03"),
       topRated: true,
-      color:'blue'
     };
     fixture.detectChanges();
     removeSpy = spyOn(component.deleteElement, 'emit');

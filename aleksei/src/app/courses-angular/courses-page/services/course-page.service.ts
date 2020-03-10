@@ -21,7 +21,6 @@ export class CoursePageService {
       durationTime: 60,
       creationDate: new Date("2020-10-03"),
       topRated: true,
-      color:'red'
     },
     {
       id: 2,
@@ -33,7 +32,6 @@ export class CoursePageService {
       durationTime: 88,
       creationDate: new Date("2016-06-03"),
       topRated: true,
-      color:'blue'
     },
     {
       id: 3,
@@ -45,7 +43,6 @@ export class CoursePageService {
       durationTime: 30,
       creationDate: new Date("2020-03-03"),
       topRated: false,
-      color:'green'
     }
   ];
 

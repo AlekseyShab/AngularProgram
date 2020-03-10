@@ -5,5 +5,4 @@ export interface CourseItem {
   durationTime: number;
   creationDate: Date;
   topRated: boolean;
-  color: string
 }
