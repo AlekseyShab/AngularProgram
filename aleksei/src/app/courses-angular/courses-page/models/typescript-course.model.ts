@@ -4,4 +4,6 @@ export interface CourseItem {
   description: string;
   creationTime: string;
   creationDate: Date;
+  topRated: boolean;
+  color:string
 }

@@ -1,7 +1,9 @@
-<div class="item" (show)="info.id" appHighlightBorder [creationDate]="info.creationDate">
+<div class="item" (show)="info.id" appHighlightBorder [creationDate]="info.creationDate" [ngClass]="info.color">
 
   <div class="title-container">
-    <span class="title-container__text">Video Course {{info.id}}. {{info.title | uppercase}}</span>
+    <span class="title-container__text">Video Course {{info.id}}. {{info.title | uppercase}}
+      <span *ngIf="info.topRated"> * </span>
+    </span>
     <div class="date-time-container">
       <div class="icon"><i class="fa fa-clock-o" aria-hidden="true"></i>{{info.creationTime}}</div>
       <div class="icon"><i class="fa fa-calendar" aria-hidden="true"></i>{{info.creationDate | date:'mediumDate'}}</div>
