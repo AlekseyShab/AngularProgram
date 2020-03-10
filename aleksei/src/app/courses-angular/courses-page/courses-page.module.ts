@@ -8,6 +8,7 @@ import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { LoadMoreComponent } from './load-more/load-more.component';
 import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
+import { HighlightBorderDirective } from './directives/highlightborder.directive';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { SectionComponent } from './section/section.component';
     ItemComponent,
     BreadcrumbsComponent,
     LoadMoreComponent,
+    HighlightBorderDirective,
   ],
   exports: [
     CoursesPageComponent,
