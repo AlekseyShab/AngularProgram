@@ -3,6 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ItemComponent } from './item.component';
 import { DeleteBtnStubComponent, EditBtnStubComponent } from '../../testing/component-stub';
 import { HighlightBorderDirective } from '../directives/highlightborder.directive';
+import { DurationPipe } from '../pipes/duration.pipe';
 
 const SELECTORS = {
   deleteBtn: 'app-delete-btn'
@@ -19,7 +20,8 @@ describe('ItemComponent ', () => {
         ItemComponent,
         EditBtnStubComponent,
         DeleteBtnStubComponent,
-        HighlightBorderDirective
+        HighlightBorderDirective,
+        DurationPipe
       ]
     })
       .compileComponents();

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
 
@@ -8,7 +8,7 @@ import { CoursePageService } from '../services/course-page.service';
   styleUrls: ['./list.component.scss']
 })
 export class ListComponent implements OnInit {
-
+  @Input() searchToken: string;
   arrayOfCourses: CourseItem[];
 
   constructor(private courseService: CoursePageService) {
@@ -20,6 +20,5 @@ export class ListComponent implements OnInit {
 
   deleteItemElement(e) {
     this.arrayOfCourses = this.arrayOfCourses.filter(itemId => itemId.id !== e);
-    console.log(e);
   }
 }

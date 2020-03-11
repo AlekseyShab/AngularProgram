@@ -1,4 +1,4 @@
-<app-item *ngFor="let item of arrayOfCourses" [info]="item" (deleteElement)="deleteItemElement($event)"></app-item>
+<app-item *ngFor="let item of arrayOfCourses | filterPipe: searchToken" [info]="item" (deleteElement)="deleteItemElement($event)"></app-item>
 <div *ngIf="!arrayOfCourses" class="message">NO DATA, FEEL FREE TO ADD NEW COURSES</div>
 <app-load-more></app-load-more>
 

@@ -10,6 +10,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
 import { HighlightBorderDirective } from './directives/highlightborder.directive';
 import { DurationPipe } from './pipes/duration.pipe';
+import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -22,14 +24,16 @@ import { DurationPipe } from './pipes/duration.pipe';
     LoadMoreComponent,
     HighlightBorderDirective,
     DurationPipe,
+    FilterPipe,
   ],
   exports: [
     CoursesPageComponent,
-    ListComponent
+    ListComponent,
   ],
   imports: [
     SharedModule,
     CommonModule,
+    FormsModule,
   ]
 })
 export class CoursesPageModule { }
