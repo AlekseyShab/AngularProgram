@@ -1,4 +1,4 @@
-<div class="item" (show)="info.id" appHighlightBorder [creationDate]="info.creationDate" ngClass="item-color">
+<div class="item" (show)="info.id" appHighlightBorder [creationDate]="info.creationDate" [ngClass]="info.topRated ? 'item-color' : 'item'">
 
   <div class="title-container">
     <span class="title-container__text">Video Course {{info.id}}. {{info.title | uppercase}}
