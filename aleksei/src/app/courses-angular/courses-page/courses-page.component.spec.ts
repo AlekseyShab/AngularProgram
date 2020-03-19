@@ -10,6 +10,7 @@ import {
   SearchBtnStubComponent,
   SectionStubComponent
 } from '../testing/component-stub';
+import { FormsModule } from '@angular/forms';
 
 describe('CoursesPageComponent', () => {
   let component: CoursesPageComponent;
@@ -26,7 +27,8 @@ describe('CoursesPageComponent', () => {
         EditBtnStubComponent,
         AddBtnStubComponent,
         SectionStubComponent
-      ]
+      ],
+      imports:[FormsModule]
     })
     .compileComponents();
   }));
@@ -39,5 +41,10 @@ describe('CoursesPageComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should change searchToken value', () => {
+    component.search('NameField');
+    expect(component.searchTokenResult).toBe('NameField');
   });
 });

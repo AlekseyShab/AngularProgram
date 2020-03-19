@@ -2,47 +2,12 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ItemComponent } from './item.component';
 import { DeleteBtnStubComponent, EditBtnStubComponent } from '../../testing/component-stub';
-import { Component } from '@angular/core';
+import { HighlightBorderDirective } from '../directives/highlightborder.directive';
+import { DurationPipe } from '../pipes/duration.pipe';
 
 const SELECTORS = {
   deleteBtn: 'app-delete-btn'
 };
-@Component({
-  template: `<app-item [info]='info' (deleteElement)="$event"></app-item>`
-})
-class TestHostComponent {
-  info = {
-    id: 4
-  };
-}
-
-
-describe('ItemComponent with wrapper', () => {
-  let component: TestHostComponent;
-  let fixture: ComponentFixture<TestHostComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        ItemComponent,
-        TestHostComponent,
-        EditBtnStubComponent,
-        DeleteBtnStubComponent
-      ]
-    })
-    .compileComponents();
-  }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(TestHostComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create and get id from @Input', () => {
-    expect(component).toBeTruthy();
-  });
-});
 
 describe('ItemComponent ', () => {
   let component: ItemComponent;
@@ -54,7 +19,9 @@ describe('ItemComponent ', () => {
       declarations: [
         ItemComponent,
         EditBtnStubComponent,
-        DeleteBtnStubComponent
+        DeleteBtnStubComponent,
+        HighlightBorderDirective,
+        DurationPipe
       ]
     })
       .compileComponents();
@@ -70,8 +37,9 @@ describe('ItemComponent ', () => {
       id: 3,
       title: 'Angular',
       description: '',
-      creationTime: '1h 20min',
-      creationDate: '12 Nov 2011'
+      durationTime: 30,
+      creationDate: new Date("2016-06-03"),
+      topRated: true,
     };
     fixture.detectChanges();
     removeSpy = spyOn(component.deleteElement, 'emit');

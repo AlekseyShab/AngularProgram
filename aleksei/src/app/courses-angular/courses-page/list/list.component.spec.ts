@@ -4,6 +4,7 @@ import { ListComponent } from './list.component';
 import { ItemStubComponent, LoadMoreStubComponent } from '../../testing/component-stub';
 import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
+import { FilterPipe } from '../pipes/filter.pipe';
 
 const SELECTORS = {
   item: 'app-item'
@@ -16,22 +17,25 @@ class CoursePageStubService {
       id: 1,
       title: 'Angular',
       description: 'something',
-      creationTime: '1h 28min',
-      creationDate: '9 Nov, 2018'
+      durationTime: 66,
+      creationDate: new Date('2016-06-03'),
+      topRated: true,
     },
     {
       id: 2,
       title: 'React',
       description: 'something',
-      creationTime: '1h 28min',
-      creationDate: '8 Nov, 2018'
+      durationTime: 60,
+      creationDate: new Date('2016-06-03'),
+      topRated: true,
     },
     {
       id: 3,
       title: 'Vue',
       description: 'something',
-      creationTime: '2h 38min',
-      creationDate: '19 Nov, 2018'
+      durationTime: 88,
+      creationDate: new Date('2016-06-03'),
+      topRated: false,
     }
   ];
 
@@ -51,11 +55,12 @@ describe('ListComponent', () => {
       declarations: [
         ListComponent,
         ItemStubComponent,
-        LoadMoreStubComponent
+        LoadMoreStubComponent,
+        FilterPipe
       ],
       providers: [
         {provide: CoursePageService, useClass: CoursePageStubService}
-      ]
+      ],
     })
     .compileComponents();
   }));

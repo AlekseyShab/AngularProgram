@@ -7,17 +7,17 @@
 
     <div class="search-section">
       <div class="input-container">
-        <input type="text" placeholder="Text to search" class="search-field">
+        <input type="text" placeholder="Text to search" class="search-field" [(ngModel)]="searchToken">
         <img class="loupe-img" src="../../../assets/icons/ic-loupe.svg" alt="">
       </div>
-      <app-search-btn></app-search-btn>
+      <app-search-btn (click)="search(searchToken)"></app-search-btn>
     </div>
 
     <div class="add-courses-section">
       <app-add-btn class="add-courses-section__btn"></app-add-btn>
     </div>
 
-    <app-section></app-section>
+    <app-section [searchToken]="searchTokenResult"></app-section>
 
   </div>
 

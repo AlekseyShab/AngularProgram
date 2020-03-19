@@ -69,7 +69,7 @@ export class AddBtnStubComponent {
   template: '',
 })
 export class ListStubComponent {
-
+  @Input() searchToken: string;
 }
 
 @Component({
@@ -77,7 +77,7 @@ export class ListStubComponent {
   template: '',
 })
 export class SectionStubComponent {
-
+  @Input() searchToken:string
 }
 
 @Component({
