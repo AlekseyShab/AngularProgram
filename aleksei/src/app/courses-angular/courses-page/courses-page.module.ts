@@ -12,6 +12,7 @@ import { HighlightBorderDirective } from './directives/highlightborder.directive
 import { DurationPipe } from './pipes/duration.pipe';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     HighlightBorderDirective,
     DurationPipe,
     FilterPipe,
+    OrderByPipe,
   ],
   exports: [
     CoursesPageComponent,
