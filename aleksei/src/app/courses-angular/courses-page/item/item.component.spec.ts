@@ -32,19 +32,4 @@ describe('ItemComponent ', () => {
     component = fixture.componentInstance;
   });
 
-  it('should create and delete Item calling @Output', () => {
-    component.info = {
-      id: 3,
-      title: 'Angular',
-      description: '',
-      durationTime: 30,
-      creationDate: new Date("2016-06-03"),
-      topRated: true,
-    };
-    fixture.detectChanges();
-    removeSpy = spyOn(component.deleteElement, 'emit');
-    const el = fixture.nativeElement.querySelector(SELECTORS.deleteBtn);
-    el.click();
-    expect(removeSpy).toHaveBeenCalled();
-  });
 });

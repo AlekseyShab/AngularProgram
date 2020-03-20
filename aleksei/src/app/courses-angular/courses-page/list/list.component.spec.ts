@@ -5,6 +5,7 @@ import { ItemStubComponent, LoadMoreStubComponent } from '../../testing/componen
 import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
 import { FilterPipe } from '../pipes/filter.pipe';
+import { OrderByPipe } from '../pipes/order-by.pipe';
 
 const SELECTORS = {
   item: 'app-item'
@@ -56,7 +57,8 @@ describe('ListComponent', () => {
         ListComponent,
         ItemStubComponent,
         LoadMoreStubComponent,
-        FilterPipe
+        FilterPipe,
+        OrderByPipe
       ],
       providers: [
         {provide: CoursePageService, useClass: CoursePageStubService}
@@ -78,10 +80,5 @@ describe('ListComponent', () => {
   it('should check array from CoursePageService', () => {
     const itemList = fixture.nativeElement.querySelectorAll(SELECTORS.item);
     expect(itemList.length).toBe(3);
-  });
-
-  it('should DELETE Item from array', () => {
-    component.deleteItemElement(1);
-    expect(component.arrayOfCourses.length).toBe(2);
   });
 });
