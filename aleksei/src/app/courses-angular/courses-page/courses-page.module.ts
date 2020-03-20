@@ -13,6 +13,8 @@ import { DurationPipe } from './pipes/duration.pipe';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
+import { DeleteFileModalWindowComponent } from './delete-file-modal-window/delete-file-modal-window.component';
+import { MaterialModule } from '../../material';
 
 
 @NgModule({
@@ -27,6 +29,7 @@ import { OrderByPipe } from './pipes/order-by.pipe';
     DurationPipe,
     FilterPipe,
     OrderByPipe,
+    DeleteFileModalWindowComponent,
   ],
   exports: [
     CoursesPageComponent,
@@ -36,6 +39,7 @@ import { OrderByPipe } from './pipes/order-by.pipe';
     SharedModule,
     CommonModule,
     FormsModule,
+    MaterialModule
   ]
 })
 export class CoursesPageModule { }

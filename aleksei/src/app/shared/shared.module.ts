@@ -8,7 +8,6 @@ import { DeleteBtnComponent } from './blue-buttons/delete-btn/delete-btn.compone
 import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
 
 
-
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -16,8 +15,7 @@ import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
     SearchBtnComponent,
     AddBtnComponent,
     DeleteBtnComponent,
-    EditBtnComponent
-
+    EditBtnComponent,
   ],
   exports: [
     HeaderComponent,
@@ -25,10 +23,10 @@ import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
     SearchBtnComponent,
     AddBtnComponent,
     DeleteBtnComponent,
-    EditBtnComponent
+    EditBtnComponent,
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class SharedModule { }

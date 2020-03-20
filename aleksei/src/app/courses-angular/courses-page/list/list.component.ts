@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
 
@@ -7,7 +7,7 @@ import { CoursePageService } from '../services/course-page.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent implements OnInit, DoCheck {
   @Input() searchToken: string;
   arrayOfCourses: CourseItem[];
 
@@ -18,7 +18,8 @@ export class ListComponent implements OnInit {
     this.arrayOfCourses = this.courseService.courses;
   }
 
-  deleteItemElement(e) {
-    this.arrayOfCourses = this.arrayOfCourses.filter(itemId => itemId.id !== e);
+  ngDoCheck() {
+    this.arrayOfCourses = this.courseService.courses;
   }
+
 }
