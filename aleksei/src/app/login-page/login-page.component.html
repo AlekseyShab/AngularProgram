@@ -1,0 +1,61 @@
+<div class="form-container">
+    <form [formGroup]="usersFormGroup" class="form-group">
+        <div class="input-container">
+            <label for="name">Name</label>
+            <input
+                    type="email"
+                    formControlName="name"
+                    id="name"
+                    class="field"
+                    placeholder="Type your name here"
+            />
+            <div
+                    *ngIf="
+            usersFormGroup.controls.name.invalid &&
+            (usersFormGroup.controls.name.dirty ||
+              usersFormGroup.controls.name.touched)
+          "
+                    class="alert"
+            >
+                <div *ngIf="usersFormGroup.controls.name.errors.required">
+                    Email is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="password" class="input-field__title">Password</label>
+            <div class="input-container__wrapper">
+                <input
+                    #password
+                    type="password"
+                    id="password"
+                    formControlName="password"
+                    class="field"
+                    placeholder="Type your password here"
+                />
+            </div>
+            <div
+                    *ngIf="
+            usersFormGroup.controls.password.invalid &&
+            (usersFormGroup.controls.password.dirty ||
+              usersFormGroup.controls.password.touched)
+          "
+                    class="alert"
+            >
+                <div *ngIf="usersFormGroup.controls.password.errors.required">
+                    Password is required.
+                </div>
+                <div *ngIf="usersFormGroup.controls.password.errors.minlength">
+                    Password must contain 3 symbols long.
+                </div>
+            </div>
+        </div>
+
+        <div class = "btn-container">
+            <button mat-button class="login-btn" [disabled]="!usersFormGroup.valid" (click)="login()">Log In</button>
+        </div>
+    </form>
+</div>
+
+
