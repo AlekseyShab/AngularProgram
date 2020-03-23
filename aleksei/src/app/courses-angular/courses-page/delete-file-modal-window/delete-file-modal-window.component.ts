@@ -17,7 +17,7 @@ export class DeleteFileModalWindowComponent {
     this.dialogRef.close();
   }
   deleteItem(): void {
-    this.courseService.arrayOfCourses = this.courseService.arrayOfCourses.filter(itemId => itemId.id !== this.data);
+    this.courseService.removeCourse(this.data);
     this.dialogRef.close();
   }
 
