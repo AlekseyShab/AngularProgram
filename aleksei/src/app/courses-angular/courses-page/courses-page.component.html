@@ -1,6 +1,4 @@
 <div>
-  <app-header></app-header>
-
   <app-breadcrumbs></app-breadcrumbs>
 
   <div class="courses-page">
@@ -14,12 +12,10 @@
     </div>
 
     <div class="add-courses-section">
-      <app-add-btn class="add-courses-section__btn"></app-add-btn>
+      <app-add-btn class="add-courses-section__btn" (click)="addCourse()"></app-add-btn>
     </div>
 
     <app-section [searchToken]="searchTokenResult"></app-section>
 
   </div>
-
-  <app-footer></app-footer>
 </div>

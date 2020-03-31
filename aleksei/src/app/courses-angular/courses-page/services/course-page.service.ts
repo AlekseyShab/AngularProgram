@@ -51,4 +51,31 @@ export class CoursePageService {
     return this.arrayOfCourses;
   }
 
+  itemCourse(id) {
+    for(let item of this.arrayOfCourses){
+      if(item.id == id){
+        return item
+      }
+    }
+  }
+
+  createCourse() {
+    const course: CourseItem = {
+      id: 4,
+      title: 'Test',
+      description: 'test description',
+      durationTime: 60,
+      creationDate: new Date(),
+      topRated:false
+    };
+    this.arrayOfCourses.push(course)
+  }
+
+  removeCourse(id) {
+    this.arrayOfCourses =  this.arrayOfCourses.filter(itemId => itemId.id !== id);
+  }
+
+  updateItem() {
+
+  }
 }

@@ -1,5 +1,7 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
+import { DeleteFileModalWindowComponent } from '../delete-file-modal-window/delete-file-modal-window.component';
+import { MatDialog, } from '@angular/material';
 
 @Component({
   selector: 'app-item',
@@ -8,17 +10,24 @@ import { CourseItem } from '../models/typescript-course.model';
 })
 export class ItemComponent implements OnInit {
   @Input() info: CourseItem;
-  @Output() deleteElement: EventEmitter<number> = new EventEmitter();
   courseId: number;
 
-  constructor() { }
+  constructor(private dialog: MatDialog) {
+  }
 
   ngOnInit() {
     this.courseId = this.info.id;
   }
 
-  deleteItem(id): void {
-    this.deleteElement.emit(id);
+  openDialog(id): void {
+    const dialogRef = this.dialog.open(DeleteFileModalWindowComponent, {
+      width: '350px',
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('The dialog was closed');
+    });
   }
 
 }

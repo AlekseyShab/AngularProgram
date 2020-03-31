@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CoursePageService } from './services/course-page.service';
 
 @Component({
   selector: 'app-courses-page',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class CoursesPageComponent implements OnInit {
   searchToken: string;
   searchTokenResult: string;
-  constructor() { }
+  constructor(private service: CoursePageService) { }
 
   ngOnInit() {
   }
@@ -16,4 +17,9 @@ export class CoursesPageComponent implements OnInit {
   search(searchToken){
     this.searchTokenResult = searchToken;
   }
+
+  addCourse() {
+    this.service.createCourse();
+  }
+
 }
