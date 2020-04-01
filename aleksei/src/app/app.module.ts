@@ -10,6 +10,8 @@ import { DeleteFileModalWindowComponent } from './courses-angular/courses-page/d
 import { LoginPageComponent } from './login-page/login-page.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material';
+import { TestingModule } from './courses-angular/testing/testing.module';
+import { CreateFileModalWindowComponent } from './courses-angular/courses-page/create-file-modal-window/create-file-modal-window.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,18 @@ import { MatButtonModule } from '@angular/material';
   imports: [
     BrowserModule,
     SharedModule,
+    TestingModule,
     CoursesPageModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatButtonModule
+    MatButtonModule,
+    AppRoutingModule,
   ],
   providers: [],
-  entryComponents: [DeleteFileModalWindowComponent],
+  entryComponents: [
+    DeleteFileModalWindowComponent,
+    CreateFileModalWindowComponent
+  ],
   exports: [
     LoginPageComponent
   ],
