@@ -1,33 +1,25 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
-import { DeleteFileModalWindowComponent } from '../delete-file-modal-window/delete-file-modal-window.component';
-import { MatDialog, } from '@angular/material';
 
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  styleUrls: ['./item.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ItemComponent implements OnInit {
   @Input() info: CourseItem;
+  @Output() open: EventEmitter<any> = new EventEmitter();
   courseId: number;
 
-  constructor(private dialog: MatDialog) {
+  constructor() {
   }
 
   ngOnInit() {
     this.courseId = this.info.id;
   }
 
-  openDialog(id): void {
-    const dialogRef = this.dialog.open(DeleteFileModalWindowComponent, {
-      width: '350px',
-      data: id
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('The dialog was closed');
-    });
+  toggle(id) {
+    this.open.emit(id)
   }
-
 }

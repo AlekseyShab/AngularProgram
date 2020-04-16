@@ -10,11 +10,12 @@ import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
 import { HighlightBorderDirective } from './directives/highlightborder.directive';
 import { DurationPipe } from './pipes/duration.pipe';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipe } from './pipes/filter.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
 import { DeleteFileModalWindowComponent } from './delete-file-modal-window/delete-file-modal-window.component';
 import { MaterialModule } from '../../material';
+import { CreateFileModalWindowComponent } from './create-file-modal-window/create-file-modal-window.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { MaterialModule } from '../../material';
     FilterPipe,
     OrderByPipe,
     DeleteFileModalWindowComponent,
+    CreateFileModalWindowComponent,
   ],
   exports: [
     CoursesPageComponent,
@@ -40,6 +42,7 @@ import { MaterialModule } from '../../material';
     CommonModule,
     FormsModule,
     MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class CoursesPageModule { }

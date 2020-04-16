@@ -1,6 +1,8 @@
 import { Component, DoCheck, Input, OnInit } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
+import { DeleteFileModalWindowComponent } from '../delete-file-modal-window/delete-file-modal-window.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
   selector: 'app-list',
@@ -11,7 +13,7 @@ export class ListComponent implements OnInit, DoCheck {
   @Input() searchToken: string;
   arrayOfCourses: CourseItem[];
 
-  constructor(private courseService: CoursePageService) {
+  constructor(private courseService: CoursePageService,private dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -20,6 +22,17 @@ export class ListComponent implements OnInit, DoCheck {
 
   ngDoCheck() {
     this.arrayOfCourses = this.courseService.courses;
+  }
+
+  openDialog(id): void {
+    const dialogRef = this.dialog.open(DeleteFileModalWindowComponent, {
+      width: '350px',
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(() => {
+      console.log('The dialog was closed');
+    });
   }
 
 }
