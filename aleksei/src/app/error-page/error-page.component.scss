@@ -1,0 +1,40 @@
+.error-page{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin: 10% 0;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+  &__status{
+    color: grey;
+    font-size: 6.25em;
+    font-weight: bold;
+  }
+  &__robot-image{
+    margin-left: 10px;
+    height: 199px;
+    width: 287px;
+  }
+  &__error{
+    color: grey;
+    font-size: 3em
+  }
+
+.go-homepage{
+    text-decoration: none;
+    color: blue;
+    font-size: 0.88em;
+    margin: 24px;
+    &:focus{
+      outline: none
+    }
+
+  }
+}
+
+

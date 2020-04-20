@@ -59,15 +59,7 @@ export class CoursePageService {
     }
   }
 
-  createCourse() {
-    const course: CourseItem = {
-      id: 4,
-      title: 'Test',
-      description: 'test description',
-      durationTime: 60,
-      creationDate: new Date(),
-      topRated:false
-    };
+  createCourse(course: CourseItem) {
     this.arrayOfCourses.push(course)
   }
 

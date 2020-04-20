@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CoursePageService } from './services/course-page.service';
 import { MatDialog } from '@angular/material';
-import { CreateFileModalWindowComponent } from './create-file-modal-window/create-file-modal-window.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-courses-page',
@@ -11,7 +11,7 @@ import { CreateFileModalWindowComponent } from './create-file-modal-window/creat
 export class CoursesPageComponent implements OnInit {
   searchToken: string;
   searchTokenResult: string;
-  constructor(private service: CoursePageService,private dialog: MatDialog) { }
+  constructor(private service: CoursePageService,private dialog: MatDialog, private router: Router) { }
 
   ngOnInit() {
   }
@@ -20,19 +20,7 @@ export class CoursesPageComponent implements OnInit {
     this.searchTokenResult = searchToken;
   }
 
-  addCourse() {
-    this.service.createCourse();
-  }
-
   openDialog(): void {
-    const dialogRef = this.dialog.open(CreateFileModalWindowComponent, {
-      width: '450px',
-      height: '500px',
-      data: {}
-    });
-
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('The dialog was closed');
-    });
+    this.router.navigate(['courses/new']);
   }
 }

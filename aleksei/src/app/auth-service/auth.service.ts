@@ -32,7 +32,7 @@ export class AuthService {
     for(let item of this.users){
       if(item.firstName == name && item.password == password){
         this.setItemsInLocalStorage(name);
-        return this.router.navigate(['courses-page']);
+        return this.router.navigate(['courses']);
       }
     }
     alert('User is not authenticated');
