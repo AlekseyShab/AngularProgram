@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { User } from '../user/models/user.model';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +11,10 @@ export class AuthService {
       localStorage.getItem('isAuth') === 'true'
   );
 
-  users: User[] = [
-    {
-      id:'1',
-      firstName:'Alex',
-      lastName:'Ivanov',
-      password: '123'
-    },
-    {
-      id:'2',
-      firstName:'Vasya',
-      lastName:'Kyzichev',
-      password: '321'
-    }
-  ];
+  constructor(private router: Router, private http: HttpClient) { }
 
-  constructor(private router: Router) { }
-
-  isAuth(name,password) {
-    for(let item of this.users){
+  isAuth(name,password,value) {
+    for(let item of value){
       if(item.firstName == name && item.password == password){
         this.setItemsInLocalStorage(name);
         return this.router.navigate(['courses']);
@@ -63,5 +48,11 @@ export class AuthService {
     localStorage.removeItem('isAuth');
     localStorage.removeItem('userName');
     this.loggedInSubject.next(false);
+  }
+
+  login(name,password) {
+    this.http.get('http://localhost:3000/users').subscribe((value) =>{
+      this.isAuth(name,password,value)
+    })
   }
 }

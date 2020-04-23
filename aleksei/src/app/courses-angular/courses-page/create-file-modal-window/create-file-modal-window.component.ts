@@ -31,15 +31,17 @@ export class CreateFileModalWindowComponent implements OnInit {
 
   saveCourse():void {
     const newCourse: CourseItem = {
-      id: 4,
+      id: Math.floor(Math.random()),
       title: this.courseFormGroup.controls.title.value,
       description: this.courseFormGroup.controls.description.value,
       durationTime: this.courseFormGroup.controls.duration.value,
       creationDate: this.courseFormGroup.controls.date.value,
       topRated: false
     };
-    this.courseService.createCourse(newCourse);
-    this.router.navigate(['courses']);
+    this.courseService.createCourse(newCourse).subscribe(()=>{
+      this.router.navigate(['courses']);
+    });
+
   }
 
 }

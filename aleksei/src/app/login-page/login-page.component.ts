@@ -29,7 +29,7 @@ export class LoginPageComponent implements OnInit {
       password: this.usersFormGroup.controls.password.value
     };
     this.authService
-        .isAuth(user.name,user.password)
+        .login(user.name,user.password)
   }
 
 }
