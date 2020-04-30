@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatDialogRef } from '@angular/material';
+import { CourseItem } from '../models/typescript-course.model';
+import { CoursePageService } from '../services/course-page.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-file-modal-window',
@@ -9,8 +11,9 @@ import { MatDialogRef } from '@angular/material';
 })
 export class CreateFileModalWindowComponent implements OnInit {
   courseFormGroup: FormGroup;
+  id = 4;
 
-  constructor(public dialogRef: MatDialogRef<CreateFileModalWindowComponent>,) { }
+  constructor(private courseService: CoursePageService, private router: Router) { }
 
   ngOnInit() {
     this.courseFormGroup = new FormGroup({
@@ -23,8 +26,20 @@ export class CreateFileModalWindowComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
+    this.router.navigate(['courses'])
   }
 
+  saveCourse():void {
+    const newCourse: CourseItem = {
+      id: 4,
+      title: this.courseFormGroup.controls.title.value,
+      description: this.courseFormGroup.controls.description.value,
+      durationTime: this.courseFormGroup.controls.duration.value,
+      creationDate: this.courseFormGroup.controls.date.value,
+      topRated: false
+    };
+    this.courseService.createCourse(newCourse);
+    this.router.navigate(['courses']);
+  }
 
 }

@@ -12,11 +12,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material';
 import { TestingModule } from './courses-angular/testing/testing.module';
 import { CreateFileModalWindowComponent } from './courses-angular/courses-page/create-file-modal-window/create-file-modal-window.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
+    ErrorPageComponent,
   ],
   imports: [
     BrowserModule,

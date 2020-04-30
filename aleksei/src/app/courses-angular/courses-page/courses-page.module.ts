@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { CoursesPageComponent } from './courses-page.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
-import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
+import { BreadcrumbsComponent } from '../breadcrumbs/breadcrumbs.component';
 import { LoadMoreComponent } from './load-more/load-more.component';
 import { SharedModule } from '../../shared/shared.module';
 import { SectionComponent } from './section/section.component';
@@ -36,6 +36,7 @@ import { CreateFileModalWindowComponent } from './create-file-modal-window/creat
   exports: [
     CoursesPageComponent,
     ListComponent,
+    BreadcrumbsComponent,
   ],
   imports: [
     SharedModule,
