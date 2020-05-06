@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 })
 export class CreateFileModalWindowComponent implements OnInit {
   courseFormGroup: FormGroup;
-  id = 4;
 
-  constructor(private courseService: CoursePageService, private router: Router) { }
+  constructor(
+      private courseService: CoursePageService,
+      private router: Router,
+      ) { }
 
   ngOnInit() {
     this.courseFormGroup = new FormGroup({
@@ -26,11 +28,11 @@ export class CreateFileModalWindowComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.router.navigate(['courses'])
+    this.router.navigate(['courses']);
   }
 
   saveCourse():void {
-    const newCourse: CourseItem = {
+    let newCourse: CourseItem = {
       id: Math.floor(Math.random()),
       title: this.courseFormGroup.controls.title.value,
       description: this.courseFormGroup.controls.description.value,

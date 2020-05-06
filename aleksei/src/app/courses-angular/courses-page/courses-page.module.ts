@@ -16,6 +16,7 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 import { DeleteFileModalWindowComponent } from './delete-file-modal-window/delete-file-modal-window.component';
 import { MaterialModule } from '../../material';
 import { CreateFileModalWindowComponent } from './create-file-modal-window/create-file-modal-window.component';
+import { EditFilePageComponent } from './edit-file-page/edit-file-page.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { CreateFileModalWindowComponent } from './create-file-modal-window/creat
     OrderByPipe,
     DeleteFileModalWindowComponent,
     CreateFileModalWindowComponent,
+    EditFilePageComponent,
   ],
   exports: [
     CoursesPageComponent,

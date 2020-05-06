@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CourseItem } from '../models/typescript-course.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-item',
@@ -10,16 +11,21 @@ import { CourseItem } from '../models/typescript-course.model';
 export class ItemComponent implements OnInit {
   @Input() info: CourseItem;
   @Output() open: EventEmitter<any> = new EventEmitter();
-  courseId: number;
+  @Output() edit: EventEmitter<any> = new EventEmitter();
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit() {
-    this.courseId = this.info.id;
+
   }
 
   toggle(id) {
     this.open.emit(id)
   }
+
+  editCourse(id) {
+  this.router.navigate(['courses/edit'],{queryParams:{id: id}});
+  }
+
 }

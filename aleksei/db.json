@@ -1,11 +1,19 @@
 {
   "courses": [
     {
-      "id": 6,
-      "title": "React",
-      "description": "Bla-Bla-Bla",
-      "durationTime": 60,
-      "creationDate": "2020-04-26",
+      "id": 1,
+      "title": "d",
+      "description": "",
+      "durationTime": "",
+      "creationDate": "",
+      "topRated": false
+    },
+    {
+      "id": 4,
+      "title": "dddd",
+      "description": "",
+      "durationTime": "",
+      "creationDate": "",
       "topRated": false
     }
   ],

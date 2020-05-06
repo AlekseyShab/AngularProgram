@@ -7,8 +7,9 @@ import { CourseItem } from '../models/typescript-course.model';
 export class OrderByPipe implements PipeTransform {
 
   transform(value: CourseItem[]): any {
-    const sortedByDate = value.sort((a:any, b:any) => b.creationDate - a.creationDate);
-    return sortedByDate;
+    if(value){
+      return value.sort((a: any, b: any) => b.creationDate - a.creationDate);
+    }
   }
 
 }

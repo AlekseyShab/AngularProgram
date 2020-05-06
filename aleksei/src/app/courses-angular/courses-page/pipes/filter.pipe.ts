@@ -12,5 +12,4 @@ export class FilterPipe implements PipeTransform {
 
     return items.filter(elem => elem.title.toLowerCase().indexOf(searchToken) > -1);
   }
-
 }

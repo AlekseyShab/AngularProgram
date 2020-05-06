@@ -17,6 +17,9 @@ export class CoursesPageComponent implements OnInit {
   }
 
   search(searchToken){
+    this.service.searchToken(searchToken).subscribe((v)=>{
+      console.log(v)
+    })
     this.searchTokenResult = searchToken;
   }
 
