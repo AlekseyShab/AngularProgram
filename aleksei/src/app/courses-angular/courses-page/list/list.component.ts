@@ -32,11 +32,9 @@ export class ListComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnChanges() {
-    this.showSpinner = true;
     this.deleteOperationSuccessfulSubscription = this.courseService.deleteOperationSuccessfulEvent$
         .subscribe(isSuccessful => {
           if (isSuccessful === true) {
-            this.showSpinner = false;
             this.courseService.getCoursesHttp().subscribe(value => {
               this.arrayOfCourses = value;
             });
