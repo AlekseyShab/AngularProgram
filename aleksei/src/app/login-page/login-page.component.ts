@@ -8,6 +8,7 @@ import { AuthService } from '../auth-service/auth.service';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
+  showSpinner: boolean = true;
   usersFormGroup: FormGroup;
   constructor(private authService: AuthService) { }
 
@@ -21,6 +22,7 @@ export class LoginPageComponent implements OnInit {
         Validators.minLength(3)
       ])
     });
+    this.showSpinner = false
   }
 
   login(): void {
@@ -29,7 +31,8 @@ export class LoginPageComponent implements OnInit {
       password: this.usersFormGroup.controls.password.value
     };
     this.authService
-        .login(user.name,user.password)
+        .login(user.name,user.password);
+    this.authService.isLoggedIn.subscribe(value => this.showSpinner = false);
   }
 
 }

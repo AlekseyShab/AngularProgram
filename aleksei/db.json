@@ -15,6 +15,14 @@
       "durationTime": 200,
       "creationDate": "2020-05-30",
       "topRated": false
+    },
+    {
+      "id": 3,
+      "title": "JS Core",
+      "description": "something",
+      "durationTime": 120,
+      "creationDate": "2020-06-27",
+      "topRated": false
     }
   ],
   "users": [

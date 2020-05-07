@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 })
 export class ListComponent implements OnInit, OnChanges, OnDestroy {
   @Input() searchToken: string;
+  showSpinner: boolean = true;
   arrayOfCourses: CourseItem[];
 
   constructor(private courseService: CoursePageService,private dialog: MatDialog) {
@@ -19,19 +20,28 @@ export class ListComponent implements OnInit, OnChanges, OnDestroy {
   deleteOperationSuccessfulSubscription: Subscription;
 
   ngOnInit() {
-    this.courseService.getCoursesHttp().subscribe(value => {
+    this.courseService.getCoursesHttp().subscribe(
+        value => {
+      this.showSpinner = false;
       this.arrayOfCourses = value;
-    });
+    },
+           err => {
+          this.showSpinner = false;
+          console.log(err)
+        });
   }
 
   ngOnChanges() {
+    this.showSpinner = true;
     this.deleteOperationSuccessfulSubscription = this.courseService.deleteOperationSuccessfulEvent$
         .subscribe(isSuccessful => {
           if (isSuccessful === true) {
+            this.showSpinner = false;
             this.courseService.getCoursesHttp().subscribe(value => {
               this.arrayOfCourses = value;
             });
           } else {
+            this.showSpinner = false;
             console.log('error')
           }
         });

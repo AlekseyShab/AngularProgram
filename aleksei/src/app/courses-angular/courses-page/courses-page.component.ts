@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CoursePageService } from './services/course-page.service';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
@@ -10,13 +10,10 @@ import { debounceTime } from 'rxjs/operators';
   templateUrl: './courses-page.component.html',
   styleUrls: ['./courses-page.component.scss']
 })
-export class CoursesPageComponent implements OnInit {
+export class CoursesPageComponent {
   searchToken: string;
   searchTokenResult: string;
   constructor(private service: CoursePageService,private dialog: MatDialog, private router: Router) { }
-
-  ngOnInit() {
-  }
 
   onSearchChange(searchValue: string){
     if(searchValue.length > 2) {
