@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CoursePageService } from './services/course-page.service';
 import { MatDialog } from '@angular/material';
 import { Router } from '@angular/router';
+import { debounceTime } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-courses-page',
@@ -16,11 +18,18 @@ export class CoursesPageComponent implements OnInit {
   ngOnInit() {
   }
 
-  search(searchToken){
-    this.service.searchToken(searchToken).subscribe((v)=>{
-      console.log(v)
-    })
-    this.searchTokenResult = searchToken;
+  onSearchChange(searchValue: string){
+    if(searchValue.length > 2) {
+      this.service.searchToken(searchValue)
+          .pipe(debounceTime(1000))
+          .subscribe((v)=>{
+        console.log(v)
+      });
+      this.searchTokenResult = searchValue;
+    }else{
+      this.searchTokenResult = null;
+    }
+
   }
 
   openDialog(): void {

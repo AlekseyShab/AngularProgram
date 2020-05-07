@@ -1,19 +1,19 @@
 {
   "courses": [
     {
-      "id": 1,
-      "title": "d",
-      "description": "",
-      "durationTime": "",
-      "creationDate": "",
+      "id": 2,
+      "title": "React",
+      "description": "Course on React",
+      "durationTime": 140,
+      "creationDate": "2020-05-29",
       "topRated": false
     },
     {
-      "id": 4,
-      "title": "dddd",
-      "description": "",
-      "durationTime": "",
-      "creationDate": "",
+      "id": 1,
+      "title": "VUE",
+      "description": "COURSE VUE",
+      "durationTime": 200,
+      "creationDate": "2020-05-30",
       "topRated": false
     }
   ],

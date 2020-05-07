@@ -17,6 +17,7 @@ import { DeleteFileModalWindowComponent } from './delete-file-modal-window/delet
 import { MaterialModule } from '../../material';
 import { CreateFileModalWindowComponent } from './create-file-modal-window/create-file-modal-window.component';
 import { EditFilePageComponent } from './edit-file-page/edit-file-page.component';
+import { BreadcrumbUrlPipe } from './pipes/breadcrumb-url.pipe';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { EditFilePageComponent } from './edit-file-page/edit-file-page.component
     DeleteFileModalWindowComponent,
     CreateFileModalWindowComponent,
     EditFilePageComponent,
+    BreadcrumbUrlPipe,
   ],
   exports: [
     CoursesPageComponent,
