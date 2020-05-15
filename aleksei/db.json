@@ -10,18 +10,18 @@
     },
     {
       "id": 3,
-      "title": "SSSS",
-      "description": "",
-      "durationTime": 12,
-      "creationDate": "",
+      "title": "Vue",
+      "description": "Vue Course",
+      "durationTime": "",
+      "creationDate": "2020-05-24",
       "topRated": false
     },
     {
       "id": 4,
-      "title": "CAC",
-      "description": "",
-      "durationTime": 15,
-      "creationDate": "",
+      "title": "Angular2+",
+      "description": "Course for students",
+      "durationTime": 88,
+      "creationDate": "2020-06-20",
       "topRated": false
     }
   ],

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { mergeMap, switchMap } from 'rxjs/operators';
 import { CoursePageService } from '../../courses-angular/courses-page/services/course-page.service';
-import { addCourse, loadList } from './list.actions';
+import { loadList } from './list.actions';
 import { CourseItem } from '../../courses-angular/courses-page/models/typescript-course.model';
 
 @Injectable()
@@ -21,28 +21,6 @@ export class CourseEffects {
             }
         )
     )
-  );
-
-
-  // deleteCourses$ = createEffect(() =>
-  //     this.actions$.pipe(
-  //         ofType(deleteCourse),
-  //         switchMap((action) => {
-  //               return this.courseService.removeCourse(action.id)
-  //             },
-  //         )
-  //     )
-  // );
-
-
-  addCourse$ = createEffect(() =>
-        this.actions$.pipe(
-            ofType(addCourse),
-            switchMap((action) =>
-                  this.courseService.createCourse(action.course)
-                ,
-            )
-        )
   );
 
   constructor(
