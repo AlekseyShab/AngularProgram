@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Store } from '@ngrx/store';
-import { login } from './authState/login.actions';
+import { login } from '../states/authState/login.actions';
 
 @Injectable({
   providedIn: 'root'

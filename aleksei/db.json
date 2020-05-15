@@ -9,19 +9,19 @@
       "topRated": false
     },
     {
-      "id": 1,
-      "title": "VUE",
-      "description": "COURSE VUE",
-      "durationTime": 200,
-      "creationDate": "2020-05-30",
+      "id": 3,
+      "title": "SSSS",
+      "description": "",
+      "durationTime": 12,
+      "creationDate": "",
       "topRated": false
     },
     {
-      "id": 3,
-      "title": "JS Core",
-      "description": "something",
-      "durationTime": 120,
-      "creationDate": "2020-06-27",
+      "id": 4,
+      "title": "CAC",
+      "description": "",
+      "durationTime": 15,
+      "creationDate": "",
       "topRated": false
     }
   ],

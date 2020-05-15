@@ -23,14 +23,15 @@ export class CoursePageService {
     return this.http.get<CourseItem[]>(`${this.basUrlCourses}`);
   }
 
-  createCourse(course: CourseItem) {
+  createCourse(course: CourseItem):Observable<any> {
     return this.http.post(`${this.basUrlCourses}`,course);
   }
 
-  removeCourse(id) {
-    return this.http.delete(`${this.basUrlCourses}/${id}`).subscribe(()=>{
-      this._deleteOperationSuccessfulEvent$.next(true);
-    });
+  removeCourse(id): Observable<any> {
+    return this.http.delete(`${this.basUrlCourses}/${id}`)
+    //     .subscribe(()=>{
+    //   this._deleteOperationSuccessfulEvent$.next(true);
+    // });
   }
 
   editCourse(course: CourseItem){

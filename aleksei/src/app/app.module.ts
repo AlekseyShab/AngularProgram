@@ -15,7 +15,10 @@ import { CreateFileModalWindowComponent } from './courses-angular/courses-page/c
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './auth-service/authState/login.reducer';
+import { reducer } from './states/authState/login.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { CourseEffects } from './states/listState/list.effects';
+import { loadListReducer } from './states/listState/list.reducer';
 
 
 @NgModule({
@@ -33,7 +36,8 @@ import { reducer } from './auth-service/authState/login.reducer';
     ReactiveFormsModule,
     MatButtonModule,
     HttpClientModule,
-    StoreModule.forRoot({ login: reducer }),
+    StoreModule.forRoot({ login: reducer, list: loadListReducer }),
+    EffectsModule.forRoot([CourseEffects]),
     AppRoutingModule,
   ],
   providers: [],

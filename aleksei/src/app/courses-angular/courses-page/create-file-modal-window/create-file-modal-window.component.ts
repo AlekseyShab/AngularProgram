@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-create-file-modal-window',
@@ -15,6 +16,7 @@ export class CreateFileModalWindowComponent implements OnInit {
   constructor(
       private courseService: CoursePageService,
       private router: Router,
+      private store: Store<'list'>,
       ) { }
 
   ngOnInit() {
@@ -40,7 +42,9 @@ export class CreateFileModalWindowComponent implements OnInit {
       creationDate: this.courseFormGroup.controls.date.value,
       topRated: false
     };
+
     this.courseService.createCourse(newCourse).subscribe(()=>{
+      this.store.dispatch({ type: '[List Page] Load Courses' });
       this.router.navigate(['courses']);
     });
 
