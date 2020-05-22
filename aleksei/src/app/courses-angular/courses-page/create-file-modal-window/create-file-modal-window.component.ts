@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { CourseItem } from '../models/typescript-course.model';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Author, CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
@@ -12,6 +12,8 @@ import { Store } from '@ngrx/store';
 })
 export class CreateFileModalWindowComponent implements OnInit {
   courseFormGroup: FormGroup;
+  authors: Author[];
+  authorSelected: string;
 
   constructor(
       private courseService: CoursePageService,
@@ -21,11 +23,15 @@ export class CreateFileModalWindowComponent implements OnInit {
 
   ngOnInit() {
     this.courseFormGroup = new FormGroup({
-      title: new FormControl(''),
-      description: new FormControl(''),
-      date: new FormControl(''),
-      duration: new FormControl(''),
+      title: new FormControl('',[Validators.required, Validators.maxLength(50)]),
+      description: new FormControl('',[Validators.required]),
+      date: new FormControl('',[Validators.required]),
+      duration: new FormControl('',[Validators.required]),
       authors: new FormControl(''),
+      authorsSelected: new FormControl('',[Validators.required]),
+    });
+    this.courseService.getAuthors().subscribe((authors: Author[]) => {
+      this.authors = authors;
     });
   }
 
@@ -50,4 +56,8 @@ export class CreateFileModalWindowComponent implements OnInit {
 
   }
 
+  changeCity(e) {
+    let selectedAuth = e.target.value;
+    this.authorSelected = selectedAuth;
+  }
 }

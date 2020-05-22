@@ -9,6 +9,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CoursePageService {
   basUrlCourses = 'http://localhost:3000/courses';
+  basUrlAuthors = 'http://localhost:3000/authors';
 
   constructor(private http: HttpClient) {
   }
@@ -42,5 +43,9 @@ export class CoursePageService {
     let params = new HttpParams();
     params = params.append('title', token);
     return this.http.get(`${this.basUrlCourses}`, {params: params});
+  }
+
+  getAuthors(): Observable<any>{
+    return this.http.get(`${this.basUrlAuthors}`)
   }
 }

@@ -23,6 +23,22 @@
       "durationTime": 88,
       "creationDate": "2020-06-20",
       "topRated": false
+    },
+    {
+      "id": 5,
+      "title": "222",
+      "description": "2222",
+      "durationTime": 11,
+      "creationDate": "2020-05-13",
+      "topRated": false
+    },
+    {
+      "id": 6,
+      "title": "d",
+      "description": "d",
+      "durationTime": 1,
+      "creationDate": "2020-05-14",
+      "topRated": false
     }
   ],
   "users": [
@@ -35,6 +51,17 @@
       "id": "2",
       "firstName": "Vasya",
       "password": "321"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Arthur Conan Doyle"
+    },
+    {
+      "name": "Lev Tolstoy"
+    },
+    {
+      "name": "Nikolay Gogolyi"
     }
   ]
 }

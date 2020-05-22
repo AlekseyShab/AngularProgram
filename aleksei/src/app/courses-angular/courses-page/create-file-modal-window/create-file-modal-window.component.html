@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form [formGroup]="courseFormGroup" class="form-group">
+    <form [formGroup]="courseFormGroup" class="form-group" >
         <div class="input-container">
             <label for="title">Title:</label>
             <input
@@ -10,7 +10,17 @@
                     placeholder="Add title to course"
             />
         </div>
-
+        <div
+                *ngIf="
+            courseFormGroup.controls.title.invalid &&
+            (courseFormGroup.controls.title.dirty ||
+              courseFormGroup.controls.title.touched)
+          "
+        >
+            <div *ngIf="courseFormGroup.controls.title.errors.required">
+                Name is required.
+            </div>
+        </div>
         <div class="input-container">
             <label for="description" class="input-field__title">Description:</label>
             <div class="input-container__wrapper">
@@ -20,6 +30,17 @@
                     id="description"
                     formControlName="description"
                     class="field"></textarea>
+            </div>
+        </div>
+        <div
+                *ngIf="
+            courseFormGroup.controls.description.invalid &&
+            (courseFormGroup.controls.description.dirty ||
+              courseFormGroup.controls.description.touched)
+          "
+        >
+            <div *ngIf="courseFormGroup.controls.description.errors.required">
+                Description is required.
             </div>
         </div>
 
@@ -47,18 +68,30 @@
         </div>
 
         <div class="input-container">
-            <label for="authors">Authors:</label>
-            <input
-                #authors
-                type="text"
-                formControlName="authors"
-                id="authors"
-                class="field"
-            />
+            <span>List of authors:</span>
+            <select multiple formControlName="authors" (change)="changeCity($event)" [(ngModel)]="authorSelected">
+                <option *ngFor="let author of authors">
+                    {{author.name}}
+                </option>
+            </select>
         </div>
 
+        <div class="input-container">
+                        <label for="authorsSelected">Author:</label>
+                        <input
+                            #authorsSelected
+                            type="text"
+                            formControlName="authorsSelected"
+                            id="authorsSelected"
+                            class="field"
+                            [(ngModel)]="authorSelected"
+                        />
+        </div>
+
+
+
         <div class = "btn-container">
-            <button mat-button class="btn" (click)="saveCourse()">Save</button>
+            <button mat-button class="btn" (click)="saveCourse()" [disabled]="!courseFormGroup.valid">Save</button>
             <button mat-button class="btn" (click)="onNoClick()">Cancel</button>
         </div>
     </form>
