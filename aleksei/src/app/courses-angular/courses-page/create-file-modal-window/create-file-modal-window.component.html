@@ -10,7 +10,7 @@
                     placeholder="Add title to course"
             />
         </div>
-        <div
+        <div class="alert"
                 *ngIf="
             courseFormGroup.controls.title.invalid &&
             (courseFormGroup.controls.title.dirty ||
@@ -32,7 +32,7 @@
                     class="field"></textarea>
             </div>
         </div>
-        <div
+        <div class="alert"
                 *ngIf="
             courseFormGroup.controls.description.invalid &&
             (courseFormGroup.controls.description.dirty ||
