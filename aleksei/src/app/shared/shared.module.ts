@@ -8,6 +8,9 @@ import { DeleteBtnComponent } from './blue-buttons/delete-btn/delete-btn.compone
 import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { MatProgressSpinnerModule } from '@angular/material';
+import { TranslateModule } from '@ngx-translate/core';
+import { TranslateSelectComponent } from './translate-select/translate-select.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +22,7 @@ import { MatProgressSpinnerModule } from '@angular/material';
     DeleteBtnComponent,
     EditBtnComponent,
     SpinnerComponent,
+    TranslateSelectComponent,
   ],
   exports: [
     HeaderComponent,
@@ -28,10 +32,13 @@ import { MatProgressSpinnerModule } from '@angular/material';
     DeleteBtnComponent,
     EditBtnComponent,
     SpinnerComponent,
+    TranslateModule,
+    TranslateSelectComponent
   ],
   imports: [
     CommonModule,
     MatProgressSpinnerModule,
+    FormsModule,
   ]
 })
 export class SharedModule { }
