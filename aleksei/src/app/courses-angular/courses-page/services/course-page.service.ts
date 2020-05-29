@@ -1,73 +1,45 @@
 import { Injectable } from '@angular/core';
 
 import { CourseItem } from '../models/typescript-course.model';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CoursePageService {
+  basUrlCourses = 'http://localhost:3000/courses';
 
-  constructor() {
+  constructor(private http: HttpClient) {
   }
 
-  arrayOfCourses: CourseItem[] = [
-    {
-      id: 1,
-      title: 'Angular',
-      description: 'Learn about ' +
-        'where you can find course descriptions, what information they include, ' +
-        'how they work, and details about various components of a course description. ' +
-        'Course descriptions report information about a university or college\'s classes.',
-      durationTime: 60,
-      creationDate: new Date("2020-10-03"),
-      topRated: true,
-    },
-    {
-      id: 2,
-      title: 'React',
-      description: 'Learn about ' +
-        'where you can find course descriptions, what information they include, ' +
-        'how they work, and details about various components of a course description. ' +
-        'Course descriptions report information about a university or college\'s classes.',
-      durationTime: 88,
-      creationDate: new Date("2016-06-03"),
-      topRated: true,
-    },
-    {
-      id: 3,
-      title: 'Vue',
-      description: 'Learn about ' +
-        'where you can find course descriptions, what information they include, ' +
-        'how they work, and details about various components of a course description. ' +
-        'Course descriptions report information about a university or college\'s classes.',
-      durationTime: 30,
-      creationDate: new Date("2020-03-03"),
-      topRated: false,
-    }
-  ];
+  private _deleteOperationSuccessfulEvent$: Subject<boolean> = new Subject();
 
-
-  get courses(): CourseItem[] {
-    return this.arrayOfCourses;
+  get deleteOperationSuccessfulEvent$(): Observable<boolean> {
+    return this._deleteOperationSuccessfulEvent$.asObservable();
   }
 
-  itemCourse(id) {
-    for(let item of this.arrayOfCourses){
-      if(item.id == id){
-        return item
-      }
-    }
+  getCoursesHttp(): Observable<CourseItem[]> {
+    return this.http.get<CourseItem[]>(`${this.basUrlCourses}`);
   }
 
   createCourse(course: CourseItem) {
-    this.arrayOfCourses.push(course)
+    return this.http.post(`${this.basUrlCourses}`,course);
   }
 
   removeCourse(id) {
-    this.arrayOfCourses =  this.arrayOfCourses.filter(itemId => itemId.id !== id);
+    return this.http.delete(`${this.basUrlCourses}/${id}`).subscribe(()=>{
+      this._deleteOperationSuccessfulEvent$.next(true);
+    });
   }
 
-  updateItem() {
+  editCourse(course: CourseItem){
+    return this.http.post(`${this.basUrlCourses}`,course)
+  }
 
+  searchToken(token) {
+    let params = new HttpParams();
+    params = params.append('title', token);
+    return this.http.get(`${this.basUrlCourses}`, {params: params});
   }
 }

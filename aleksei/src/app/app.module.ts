@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material';
 import { TestingModule } from './courses-angular/testing/testing.module';
 import { CreateFileModalWindowComponent } from './courses-angular/courses-page/create-file-modal-window/create-file-modal-window.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ErrorPageComponent } from './error-page/error-page.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatButtonModule,
+    HttpClientModule,
     AppRoutingModule,
   ],
   providers: [],

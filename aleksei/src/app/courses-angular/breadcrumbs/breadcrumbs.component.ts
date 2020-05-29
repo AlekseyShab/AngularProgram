@@ -15,7 +15,7 @@ export class BreadcrumbsComponent implements OnInit {
   ngOnInit() {
     this.router.events
         .pipe(filter(event => event instanceof NavigationEnd))
-        .subscribe((value: NavigationEnd) => this.currentUrl = value.url);
+        .subscribe((value: NavigationEnd) => this.currentUrl = value.urlAfterRedirects);
   }
 
 }

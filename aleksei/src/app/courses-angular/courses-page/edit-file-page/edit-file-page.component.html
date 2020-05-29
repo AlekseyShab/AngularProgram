@@ -1,0 +1,65 @@
+<div class="form-container">
+    <form [formGroup]="courseFormGroup" class="form-group">
+        <div class="input-container">
+            <label for="title">Title:</label>
+            <input
+                    type="text"
+                    formControlName="title"
+                    id="title"
+                    class="field"
+                    placeholder="Add title to course"
+            />
+        </div>
+
+        <div class="input-container">
+            <label for="description" class="input-field__title">Description:</label>
+            <div class="input-container__wrapper">
+                <textarea
+                    #description
+                    type="text"
+                    id="description"
+                    formControlName="description"
+                    class="field"></textarea>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="date">Date:</label>
+            <input
+                #date
+                type="date"
+                formControlName="date"
+                id="date"
+                class="field"
+            />
+        </div>
+
+        <div class="input-container">
+            <label for="duration">Duration:</label>
+            <input
+                #duration
+                type="number"
+                formControlName="duration"
+                id="duration"
+                class="field"
+                placeholder="Duration in minutes"
+            />
+        </div>
+
+        <div class="input-container">
+            <label for="authors">Authors:</label>
+            <input
+                #authors
+                type="text"
+                formControlName="authors"
+                id="authors"
+                class="field"
+            />
+        </div>
+
+        <div class = "btn-container">
+            <button mat-button class="btn" (click)="changeCourse()">Edit Course</button>
+            <button mat-button class="btn" (click)="onNoClick()">Cancel</button>
+        </div>
+    </form>
+</div>

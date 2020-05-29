@@ -1,0 +1,61 @@
+@import "../../../color-variables";
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  &__wrapper {
+    display: flex;
+    position: relative;
+  }
+}
+
+.field {
+  border: 1px solid #004444;
+  padding: 5px 3px;
+  width: 100%;
+  :focus {
+    outline: none;
+  }
+}
+
+.form-group {
+  align-items: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  width: 350px;
+  margin: 0;
+}
+.btn-container{
+  position: absolute;
+  left: -5px;
+  bottom: -40px;
+}
+.btn{
+  background: $dark-sky-blue;
+  color:$white;
+  margin: 0 5px;
+  &:hover{
+    background: $soft-blue;
+  }
+  &:disabled {
+    background-color: $grey;
+    box-shadow: none;
+  }
+}
+
+.alert{
+  color:red
+}

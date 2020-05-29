@@ -1,0 +1,32 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "d",
+      "description": "",
+      "durationTime": "",
+      "creationDate": "",
+      "topRated": false
+    },
+    {
+      "id": 4,
+      "title": "dddd",
+      "description": "",
+      "durationTime": "",
+      "creationDate": "",
+      "topRated": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Alex",
+      "password": "123"
+    },
+    {
+      "id": "2",
+      "firstName": "Vasya",
+      "password": "321"
+    }
+  ]
+}
