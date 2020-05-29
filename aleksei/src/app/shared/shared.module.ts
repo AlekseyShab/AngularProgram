@@ -6,6 +6,8 @@ import { SearchBtnComponent } from './search-btn/search-btn.component';
 import { EditBtnComponent } from './blue-buttons/edit-btn/edit-btn.component';
 import { DeleteBtnComponent } from './blue-buttons/delete-btn/delete-btn.component';
 import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 
 @NgModule({
@@ -16,6 +18,7 @@ import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
     AddBtnComponent,
     DeleteBtnComponent,
     EditBtnComponent,
+    SpinnerComponent,
   ],
   exports: [
     HeaderComponent,
@@ -24,9 +27,11 @@ import { AddBtnComponent } from './blue-buttons/add-btn/add-btn.component';
     AddBtnComponent,
     DeleteBtnComponent,
     EditBtnComponent,
+    SpinnerComponent,
   ],
   imports: [
     CommonModule,
+    MatProgressSpinnerModule,
   ]
 })
 export class SharedModule { }

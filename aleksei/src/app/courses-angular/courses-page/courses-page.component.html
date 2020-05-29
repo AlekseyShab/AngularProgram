@@ -2,10 +2,9 @@
   <div class="courses-page">
     <div class="search-section">
       <div class="input-container">
-        <input type="text" placeholder="Text to search" class="search-field" [(ngModel)]="searchToken">
+        <input type="text" placeholder="Text to search" class="search-field" [(ngModel)]="searchToken" (ngModelChange)="onSearchChange($event)">
         <img class="loupe-img" src="../../../assets/icons/ic-loupe.svg" alt="">
       </div>
-      <app-search-btn (click)="search(searchToken)"></app-search-btn>
     </div>
 
     <div class="add-courses-section">
@@ -13,6 +12,5 @@
     </div>
 
     <app-section [searchToken]="searchTokenResult"></app-section>
-
   </div>
 </div>
