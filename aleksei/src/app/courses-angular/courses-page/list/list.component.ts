@@ -3,7 +3,6 @@ import { CourseItem } from '../models/typescript-course.model';
 import { CoursePageService } from '../services/course-page.service';
 import { DeleteFileModalWindowComponent } from '../delete-file-modal-window/delete-file-modal-window.component';
 import { MatDialog } from '@angular/material';
-import { Subscription } from 'rxjs';
 import { Store } from '@ngrx/store';
 
 @Component({
@@ -21,7 +20,6 @@ export class ListComponent implements OnInit {
       private dialog: MatDialog,
       private store: Store<{list: CourseItem[]}>
   ) {}
-  deleteOperationSuccessfulSubscription: Subscription;
 
   ngOnInit() {
     this.store.dispatch({ type: '[List Page] Load Courses' });
@@ -34,41 +32,14 @@ export class ListComponent implements OnInit {
               console.log(err)
             }
         )
-    // this.courseService.getCoursesHttp().subscribe(
-    //     value => {
-    //
-    //   this.arrayOfCourses = value;
-    // },
-
   }
-
-  // ngOnChanges() {
-  //   this.deleteOperationSuccessfulSubscription = this.courseService.deleteOperationSuccessfulEvent$
-  //       .subscribe(isSuccessful => {
-  //         if (isSuccessful === true) {
-  //           this.courseService.getCoursesHttp().subscribe(value => {
-  //             this.arrayOfCourses = value;
-  //           });
-  //         } else {
-  //           this.showSpinner = false;
-  //           console.log('error')
-  //         }
-  //       });
-  // }
-
-  // ngOnDestroy() {
-  //   this.deleteOperationSuccessfulSubscription.unsubscribe();
-  // }
 
   openDialog(id): void {
     const dialogRef = this.dialog.open(DeleteFileModalWindowComponent, {
       width: '350px',
       data: id
     });
-
-    dialogRef.afterClosed().subscribe(() => {
-      console.log('The dialog was closed');
-    });
+    dialogRef.afterClosed()
   }
 
 }

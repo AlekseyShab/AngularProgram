@@ -19,7 +19,6 @@ export class EditFilePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log();
     this.courseFormGroup = new FormGroup({
       title: new FormControl(''),
       description: new FormControl(''),
