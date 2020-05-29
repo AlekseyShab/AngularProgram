@@ -19,7 +19,6 @@ export class EditFilePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log();
     this.courseFormGroup = new FormGroup({
       title: new FormControl(''),
       description: new FormControl(''),
@@ -35,17 +34,18 @@ export class EditFilePageComponent implements OnInit {
 
   changeCourse():void {
     let id = +this.route.snapshot.queryParamMap.get('id');
-      this.courseService.removeCourse(id);
-      let newCourseWithId: CourseItem = {
-        id: id,
-        title: this.courseFormGroup.controls.title.value,
-        description: this.courseFormGroup.controls.description.value,
-        durationTime: this.courseFormGroup.controls.duration.value,
-        creationDate: this.courseFormGroup.controls.date.value,
-        topRated: false
-      };
-      this.courseService.editCourse(newCourseWithId).subscribe(()=>{
-        this.router.navigate(['courses']);
+      this.courseService.removeCourse(id).subscribe(()=>{
+        let newCourseWithId: CourseItem = {
+          id: id,
+          title: this.courseFormGroup.controls.title.value,
+          description: this.courseFormGroup.controls.description.value,
+          durationTime: this.courseFormGroup.controls.duration.value,
+          creationDate: this.courseFormGroup.controls.date.value,
+          topRated: false
+        };
+        this.courseService.editCourse(newCourseWithId).subscribe(()=>{
+          this.router.navigate(['courses']);
+        });
       });
   }
 }
