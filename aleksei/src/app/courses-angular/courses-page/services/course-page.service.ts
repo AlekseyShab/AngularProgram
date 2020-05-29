@@ -29,9 +29,6 @@ export class CoursePageService {
 
   removeCourse(id): Observable<any> {
     return this.http.delete(`${this.basUrlCourses}/${id}`)
-    //     .subscribe(()=>{
-    //   this._deleteOperationSuccessfulEvent$.next(true);
-    // });
   }
 
   editCourse(course: CourseItem){
