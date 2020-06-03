@@ -1,4 +1,4 @@
-<app-item *ngFor="let item of arrayOfCourses| orderBy | filterPipe: searchToken" [info]="item" (open)="openDialog($event)"></app-item>
+<app-item *ngFor="let item of arrayOfCourses | filterPipe: searchToken | orderBy" [info]="item" (open)="openDialog($event)"></app-item>
 <div *ngIf="!arrayOfCourses" class="message">NO DATA, FEEL FREE TO ADD NEW COURSES</div>
 <app-spinner [show]="showSpinner"></app-spinner>
 <app-load-more></app-load-more>

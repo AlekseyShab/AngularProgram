@@ -9,6 +9,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class CoursePageService {
   basUrlCourses = 'http://localhost:3000/courses';
+  basUrlAuthors = 'http://localhost:3000/authors';
 
   constructor(private http: HttpClient) {
   }
@@ -23,14 +24,15 @@ export class CoursePageService {
     return this.http.get<CourseItem[]>(`${this.basUrlCourses}`);
   }
 
-  createCourse(course: CourseItem) {
+  createCourse(course: CourseItem):Observable<any> {
     return this.http.post(`${this.basUrlCourses}`,course);
   }
 
-  removeCourse(id) {
-    return this.http.delete(`${this.basUrlCourses}/${id}`).subscribe(()=>{
-      this._deleteOperationSuccessfulEvent$.next(true);
-    });
+  removeCourse(id): Observable<any> {
+    return this.http.delete(`${this.basUrlCourses}/${id}`)
+    //     .subscribe(()=>{
+    //   this._deleteOperationSuccessfulEvent$.next(true);
+    // });
   }
 
   editCourse(course: CourseItem){
@@ -41,5 +43,9 @@ export class CoursePageService {
     let params = new HttpParams();
     params = params.append('title', token);
     return this.http.get(`${this.basUrlCourses}`, {params: params});
+  }
+
+  getAuthors(): Observable<any>{
+    return this.http.get(`${this.basUrlAuthors}`)
   }
 }

@@ -9,19 +9,19 @@
       "topRated": false
     },
     {
-      "id": 1,
-      "title": "VUE",
-      "description": "COURSE VUE",
-      "durationTime": 200,
-      "creationDate": "2020-05-30",
+      "id": 3,
+      "title": "Vue",
+      "description": "Vue Course",
+      "durationTime": "",
+      "creationDate": "2020-05-24",
       "topRated": false
     },
     {
-      "id": 3,
-      "title": "JS Core",
-      "description": "something",
-      "durationTime": 120,
-      "creationDate": "2020-06-27",
+      "id": 4,
+      "title": "Angular2+",
+      "description": "Course for students",
+      "durationTime": 88,
+      "creationDate": "2020-06-20",
       "topRated": false
     }
   ],
@@ -35,6 +35,17 @@
       "id": "2",
       "firstName": "Vasya",
       "password": "321"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Arthur Conan Doyle"
+    },
+    {
+      "name": "Lev Tolstoy"
+    },
+    {
+      "name": "Nikolay Gogolyi"
     }
   ]
 }

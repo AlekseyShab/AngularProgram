@@ -14,6 +14,12 @@ import { TestingModule } from './courses-angular/testing/testing.module';
 import { CreateFileModalWindowComponent } from './courses-angular/courses-page/create-file-modal-window/create-file-modal-window.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './states/authState/login.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { CourseEffects } from './states/listState/list.effects';
+import { loadListReducer } from './states/listState/list.reducer';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     MatButtonModule,
     HttpClientModule,
+    StoreModule.forRoot({ login: reducer, list: loadListReducer }),
+    EffectsModule.forRoot([CourseEffects]),
     AppRoutingModule,
   ],
   providers: [],
