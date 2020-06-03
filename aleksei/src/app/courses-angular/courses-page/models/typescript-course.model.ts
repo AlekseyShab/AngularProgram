@@ -6,3 +6,7 @@ export interface CourseItem {
   creationDate: Date;
   topRated: boolean;
 }
+
+export interface Author {
+  name: string;
+}

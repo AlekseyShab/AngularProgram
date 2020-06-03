@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Store } from '@ngrx/store';
+import { login } from '../states/authState/login.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class AuthService {
       localStorage.getItem('isAuth') === 'true'
   );
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient, private store: Store) { }
 
   isAuth(name,password,value) {
     for(let item of value){
@@ -40,7 +42,7 @@ export class AuthService {
   private setItemsInLocalStorage(name): void {
     localStorage.setItem('isAuth', 'true');
     localStorage.setItem('userName', name);
-    console.log('logged in successfully');
+    this.store.dispatch(login({username: name, isAuth: true}));
     this.loggedInSubject.next(true);
   }
 
